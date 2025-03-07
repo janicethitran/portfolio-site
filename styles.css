@@ -84,6 +84,14 @@ body {
     max-height: calc(90vh - 80px); /* Ensures it doesn't exceed the viewport minus header and padding */
 }
 
+/* Job Title Styling */
+.job-title {
+    font-style: italic;
+    margin-top: 5px; /* Reduced top padding */
+    margin-bottom: 5px;
+    color: #ccc; /* Slightly lighter color for subtle emphasis */
+}
+
 .profile-pic {
     width: 150px; /* Adjust size */
     height: 150px;
@@ -243,6 +251,39 @@ body {
         overflow-y: visible; /* Disable separate scrolling */
         max-height: none; /* Remove max height restriction */
     }
+}
+
+/* Contact Box */
+.contact-box {
+    background: #333; /* Matches the dark theme */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px; /* Adds spacing above it */
+    margin-bottom: 10px; /* Adds spacing below it */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.contact-box h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.contact-box p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.contact-box a {
+    color: #7cb9e8; /* Light blue color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-box a:hover {
+    color: #add8e6; /* Lighter blue on hover */
+    text-decoration: underline;
 }
 
 /* Education Box */
