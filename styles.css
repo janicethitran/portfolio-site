@@ -1,0 +1,320 @@
+/* Particles.js Container */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #4d4d4d;
+    z-index: -1; /* Place behind all content */
+    top: 0;
+    left: 0;
+}
+
+/* General Styling */
+body {
+    font-family: Verdana, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* For proper z-index stacking */
+}
+
+/* Browser Window */
+.browser-window {
+    width: 1050px; /* Adjust width */
+    max-width: 90%; /* Ensures it resizes on smaller screens */
+    height: 90vh; /* Fixed height to enable scrolling */
+    max-height: 90vh; /* Ensures it doesn't exceed the screen */
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Window Header (Mimicking a Browser) */
+.window-header {
+    background: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.window-title {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Mac-style Buttons */
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #ffbd2e; }
+.green { background: #28c840; }
+
+/* Content Layout */
+.content {
+    display: flex;
+    padding: 30px; /* Add more spacing */
+    padding-bottom: 50px; /* Extra padding at the bottom to prevent content from being cut off */
+    flex: 1; /* Takes remaining space */
+    position: relative; /* For positioning the panels */
+}
+
+/* Left Panel (Photo and Info) - Fixed */
+.left-panel {
+    flex: 1;
+    text-align: center;
+    position: sticky;
+    top: 30px; /* Aligns with the top padding of content */
+    align-self: flex-start; /* Prevents stretching */
+    max-height: calc(90vh - 80px); /* Ensures it doesn't exceed the viewport minus header and padding */
+}
+
+.profile-pic {
+    width: 150px; /* Adjust size */
+    height: 150px;
+    object-fit: cover; /* Ensures it crops nicely */
+    border: 3px solid #888; /* Changed to a lighter gray border */
+}
+
+/* Right Panel (Bio and Links) - Scrollable */
+.right-panel {
+    flex: 2;
+    padding-left: 20px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: calc(90vh - 80px); /* Ensures it doesn't exceed the viewport minus header and padding */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #666 #333; /* For Firefox */
+}
+
+/* Custom Scrollbar Styling (for Chrome, Safari, Edge) */
+.right-panel::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+}
+
+.right-panel::-webkit-scrollbar-track {
+    background: #333; /* Dark track */
+    border-radius: 4px;
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+    background: #666; /* Medium gray thumb */
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Lighter on hover */
+}
+
+/* Also style the main content scrollbar for mobile view */
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+
+
+/* Link Container */
+.links {
+    display: flex;
+    justify-content: left; /* Align links to the left */
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px;
+}
+
+/* Style for Links as Buttons */
+.links a {
+    background: #444; /* Dark background */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* Box padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover Effect: Lighter Background */
+.links a:hover {
+    background: #666; /* Lightens when hovered */
+}
+
+
+/* Skills Section (Inside Browser Window) */
+.skills {
+    margin-top: 10px; /* Reduce top margin */
+    padding: 10px 0; /* Balanced padding */
+}
+
+.skills h2 {
+    font-size: 20px;
+    margin: 5px 0 10px 0;
+    text-align: left;
+}
+
+/* Skills container remains within right-panel */
+.skills-container {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 10px;
+}
+
+/* Individual skill boxes */
+.skills-box {
+    background: #333; /* Matches dark theme */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Add space between skill boxes */
+}
+
+.skills-box h3 {
+    font-size: 18px;
+    margin: 0 0 5px 0; /* Removes extra top margin */
+}
+
+
+.skills-box ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Override for specific lists to ensure they have bullets */
+.skills-box ul.courses-list,
+.skills-box ul.programming-list {
+    list-style-type: disc !important;
+    padding-left: 20px !important;
+}
+
+.skills-box li {
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .browser-window {
+        width: 95%;
+        height: 90vh; /* Maintain fixed height for scrolling */
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+        overflow-y: auto; /* Enable scrolling for the whole content on mobile */
+    }
+
+    .left-panel {
+        position: relative; /* Remove sticky positioning on mobile */
+        top: 0;
+        max-height: none; /* Remove max height restriction */
+        margin-bottom: 20px; /* Add space between panels */
+    }
+
+    .right-panel {
+        padding-left: 0;
+        overflow-y: visible; /* Disable separate scrolling */
+        max-height: none; /* Remove max height restriction */
+    }
+}
+
+/* Education Box */
+.education-box {
+    background: #333; /* Matches the dark theme */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px; /* Adds spacing above it */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.education-box h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Remove excess space for the first h3 in education box */
+.education-box h3:first-of-type {
+    margin-top: 0; /* Remove top margin for the first heading (Current Education) */
+}
+
+.education-box p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Make the Relevant Courses list display in two columns */
+.courses-list {
+    columns: 2; /* Splits into two columns */
+    column-gap: 20px; /* Adds space between columns */
+    list-style-type: disc; /* Adds bullet points */
+    padding-left: 20px; /* Space for bullets */
+    margin: 0;
+}
+
+/* Ensure list items are evenly spaced */
+.courses-list li {
+    break-inside: avoid; /* Prevents breaking items between columns */
+    padding: 5px 0;
+    margin-left: 5px; /* Indent list items */
+}
+
+/* Make the Programming Languages list display in two columns */
+.programming-list {
+    columns: 2; /* Splits into two columns */
+    column-gap: 20px; /* Adds space between columns */
+    list-style-type: disc; /* Adds bullet points */
+    padding-left: 20px; /* Space for bullets */
+    margin: 0;
+}
+
+/* Ensure list items are evenly spaced */
+.programming-list li {
+    break-inside: avoid; /* Prevents breaking items between columns */
+    padding: 5px 0;
+    margin-left: 5px; /* Indent list items */
+}
+/* Make the Technical Skills list structured and readable */
+.technical-list {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Space between each category */
+.technical-list li {
+    padding: 8px 0; /* Adds spacing */
+}
+
+/* Bold the category headers */
+.technical-list strong {
+    font-weight: bold;
+}

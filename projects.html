@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Janice Tran</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the projects page */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(90vh - 150px); /* Increased space for header and title */
+            scrollbar-width: thin; /* For Firefox */
+            scrollbar-color: #666 #333; /* For Firefox */
+        }
+
+        /* Custom Scrollbar Styling (for Chrome, Safari, Edge) */
+        .projects-container::-webkit-scrollbar {
+            width: 8px; /* Thin scrollbar */
+        }
+
+        .projects-container::-webkit-scrollbar-track {
+            background: #333; /* Dark track */
+            border-radius: 4px;
+        }
+
+        .projects-container::-webkit-scrollbar-thumb {
+            background: #666; /* Medium gray thumb */
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .projects-container::-webkit-scrollbar-thumb:hover {
+            background: #888; /* Lighter on hover */
+        }
+
+        /* Ensure the content area has proper scrolling */
+        .content {
+            overflow-y: auto !important;
+            padding-bottom: 30px !important;
+        }
+
+        .project-box {
+            background: #333;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-box h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .project-box p {
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .project-box a {
+            display: inline-block;
+            background: #444;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .project-box a:hover {
+            background: #666;
+        }
+
+        /* Remove the custom back-link style to use the standard links style */
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="browser-window">
+        <div class="window-header">
+            <div class="buttons">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+            <div class="window-title">janicethitran.github.io/projects</div>
+        </div>
+
+        <div class="content" style="flex-direction: column; align-items: flex-start;">
+            <div class="links">
+                <a href="index.html">← Back to Portfolio</a>
+            </div>
+            <h1>Graduate Projects</h1>
+            
+            <div class="projects-container">
+                <div class="project-box">
+                    <h3>Film Characters & MBTI Personality Analysis</h3>
+                    <p>A data-driven analysis of MBTI personality types of characters in popular films. Used Python, Selenium for web scraping, and machine learning (XGB Regressor) to analyze how character personality types influence film popularity and audience engagement. Discovered key MBTI pairs (like INFP-INTJ) that correlate with higher film success.</p>
+                    <p><strong>Technologies Used:</strong> Python, Jupyter Notebook, Selenium WebDriver, Pandas, NumPy, Matplotlib, Seaborn, NetworkX, scikit-learn, XGBoost, Random Forest, RegEx, BeautifulSoup, Chrome WebDriver, statistical analysis libraries.</p>
+                    <p><strong>Contribution:</strong> I developed the web scraping code using Selenium and Python to collect film character data. Created multiple visualizations including network analysis of character relationships, time-series analysis of personality trends across decades, and distribution charts of personality types across film genres. Implemented and ran regression models to identify correlations between character personalities and film success metrics.</p>
+                    <a href="https://github.com/tan8901/mbti-films" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-box">
+                    <h3>Satellite Nighttime Imagery for GDP & University Emissions Prediction</h3>
+                    <p>A data science project using satellite nighttime imagery to predict GDP and university emissions. Discovered a clear relationship between GDP and light emissions, which led to work on predicting university emissions. Currently a work in progress.</p>
+                    <p><strong>Technologies Used:</strong> Python, Geopandas, scikit-learn, Pandas, NumPy, Matplotlib, Ridge and Lasso regression models, k-fold cross validation, geospatial analysis libraries.</p>
+                    <p><strong>Contribution:</strong> Created time-series visualizations of nighttime imagery data, implemented and ran multiple regression models including Ridge and Lasso regression achieving over 95% accuracy. Performed k-fold cross validation to ensure model reliability and mapped universities by longitude and latitude coordinates.</p>
+                    <a href="#" class="wip-button" style="background: #666; cursor: default;">Work in Progress</a>
+                </div>
+
+                <div class="project-box">
+                    <h3>Deepfake Detection</h3>
+                    <p>A computer vision project using the Celeb-DF dataset to predict whether an image is a deepfake or authentic. The system extracts frames from videos and applies deep learning models to identify manipulated media.</p>
+                    <p><strong>Technologies Used:</strong> Python, TensorFlow/Keras, OpenCV, Transfer Learning, Convolutional Neural Networks, Cross-validation, Flask/Web interface.</p>
+                    <p><strong>Contribution:</strong> Built both custom models from scratch and implemented transfer learning approaches. Performed cross-validation to evaluate model performance. Helped develop a user interface where users can upload images for deepfake detection. Currently working on expanding the training dataset and refining the model architecture to improve accuracy.</p>
+                    <a href="#" class="wip-button" style="background: #666; cursor: default;">Work in Progress</a>
+                </div>
+
+                <div class="project-box">
+                    <h3>Network Analysis of Amazon Fine Foods Reviews</h3>
+                    <p>A comprehensive analysis of Amazon Fine Foods review data to uncover patterns and relationships between reviewers, products, and review content. The project involved extracting data in Python and conducting advanced network analysis in R.</p>
+                    <p><strong>Technologies Used:</strong> Python for data extraction, R for network analysis, igraph, Network visualization libraries, Sentiment analysis tools, Statistical analysis packages.</p>
+                    <p><strong>Contribution:</strong> Created network graphs to visualize relationships between reviewers and products. Conducted eigenvector analysis to identify influential nodes. Developed user classification system (novice, intermediate, expert) based on review patterns. Performed sentiment analysis correlating review length with positive/negative sentiment. Identified and analyzed subgroups/communities within the review network. Implemented k-fold analysis to validate findings.</p>
+                    <a href="#" class="wip-button" style="background: #666; cursor: default;">Currently Uploading to GitHub</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
